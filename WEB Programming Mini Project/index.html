@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>College Event Management System</h1>
+            <nav>
+                <button id="show-events-btn" type="button">View Events</button>
+                <button id="create-event-btn" type="button">Create Event</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Event Filtering Section -->
+            <section id="filter-section">
+                <h2>Filter Events</h2>
+                <div class="filter-controls">
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="technical">Technical</option>
+                        <option value="cultural">Cultural</option>
+                        <option value="sports">Sports</option>
+                        <option value="academic">Academic</option>
+                    </select>
+                    <input type="date" id="date-filter">
+                </div>
+            </section>
+
+            <!-- Events Display Section -->
+            <section id="events-section">
+                <h2>Upcoming Events</h2>
+                <div id="events-container" class="events-grid">
+                    <!-- Events will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Create Event Form -->
+            <section id="create-event-section" class="hidden">
+                <h2>Create New Event</h2>
+                <form id="create-event-form">
+                    <div class="form-group">
+                        <label for="event-name">Event Name:</label>
+                        <input type="text" id="event-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-date">Event Date:</label>
+                        <input type="date" id="event-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-time">Event Time:</label>
+                        <input type="time" id="event-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-category">Category:</label>
+                        <select id="event-category" required>
+                            <option value="">Select Category</option>
+                            <option value="technical">Technical</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="sports">Sports</option>
+                            <option value="academic">Academic</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-description">Description:</label>
+                        <textarea id="event-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-location">Location:</label>
+                        <input type="text" id="event-location" required>
+                    </div>
+                    <button type="submit">Create Event</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 College Event Management System</p>
+        </footer>
+    </div>
+
+    <!-- Event Registration Modal -->
+    <div id="registration-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-event-name">Event Registration</h2>
+            <form id="registration-form">
+                <input type="hidden" id="registration-event-id">
+                <div class="form-group">
+                    <label for="student-name">Name:</label>
+                    <input type="text" id="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-email">Email:</label>
+                    <input type="email" id="student-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-department">Department:</label>
+                    <select id="student-department" required>
+                        <option value="">Select Department</option>
+                        <option value="CSE">Computer Science</option>
+                        <option value="ECE">Electronics</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Psychology">Psychology</option>
+                        <option value="Architecture">Architecture</option>
+                        <option value="Business Management">Business Management</option>
+                        <option value="Law">Law</option>
+                    </select>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
